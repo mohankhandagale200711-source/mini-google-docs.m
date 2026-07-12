@@ -1,0 +1,24 @@
+{
+  "name": "mini-google-docs.m---copy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohankhandagale200711-source/mini-google-docs.m.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mohankhandagale200711-source/mini-google-docs.m/issues"
+  },
+  "homepage": "https://github.com/mohankhandagale200711-source/mini-google-docs.m#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
