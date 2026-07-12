@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Google Docs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <h2>Mini Docs</h2>
+    <div class="toolbar-buttons">
+      <button>File</button>
+      <button>Edit</button>
+      <button>View</button>
+      <button>Insert</button>
+      <button>Format</button>
+      <button>Tools</button>
+      <button>Help</button>
+    </div>
+  </div>
+<!-- Share button goes here -->
+    <button id="shareBtn" class="share-btn">Share</button>
+    <p id="shareLink"></p>
+</div>
+  <!-- Editor -->
+  <div class="editor">
+    <textarea id="editor" placeholder="Start typing your document..."></textarea>
+  </div>
+
+  <!-- Comments Panel -->
+  <div class="comments-panel">
+    <h3>Comments</h3>
+    <div id="comments"></div>
+    <input type="text" id="commentInput" placeholder="Add a comment...">
+    <button onclick="addComment()">Add</button>
+  </div>
+  
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script src="script.js"></script>
+<script>
+document.getElementById("shareBtn").addEventListener("click", () => {
+  // Generate a unique document ID
+  const uniqueId = Math.random().toString(36).substring(2, 8);
+
+  // Create a shareable link with that ID
+  const link = `${window.location.origin}/frontend/index.html?doc=${uniqueId}`;
+  // ✅ Display the link as clickable text
+  const shareLinkElement = document.getElementById("shareLink");
+  shareLinkElement.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+
+  // ✅ Copy link to clipboard
+  navigator.clipboard.writeText(link).then(() => {
+    alert("Share link copied to clipboard!");
+  });
+});
+
+</script>
+
+</body>
+</html>
