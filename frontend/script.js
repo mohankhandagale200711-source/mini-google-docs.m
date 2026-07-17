@@ -1,4 +1,4 @@
-const socket = io("http://localhost:5000");
+const socket = io("https://mini-google-docs-m-3.onrender.com");
 
 // Get docId from URL (from Share link)
 const urlParams = new URLSearchParams(window.location.search);
